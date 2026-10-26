@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["core", "src-tauri"]
+
+# Puzzle generation is CPU-heavy; keep it fast in debug builds too.
+[profile.dev.package.sm0rt-core]
+opt-level = 3
+
+[profile.dev.package.rand]
+opt-level = 3

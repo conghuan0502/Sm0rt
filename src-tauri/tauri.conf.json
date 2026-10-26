@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Sm0rt",
+  "version": "0.1.0",
+  "identifier": "app.sm0rt.desktop",
+  "build": { "frontendDist": "../dist", "beforeBuildCommand": "npm run build" },
+  "app": {
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "mascot",
+        "url": "index.html",
+        "width": 240,
+        "height": 240,
+        "x": 200,
+        "y": 200,
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "resizable": false,
+        "shadow": false,
+        "visibleOnAllWorkspaces": true
+      },
+      {
+        "label": "main",
+        "url": "main.html",
+        "title": "Sm0rt",
+        "width": 880,
+        "height": 780,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": { "active": false, "icon": ["icons/icon.ico", "icons/icon.png"] }
+}
